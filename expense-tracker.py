@@ -1,3 +1,9 @@
+def add_expense(expenses, amount, category):
+    expenses = []
+    #expense_dictionary = {'amount': amount}
+    expenses.append({'amount': amount})
+    pass
+
 def main():
     my_list = [1, 2]
     my_list.append(3)
