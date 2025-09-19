@@ -1,23 +1,31 @@
 def add_expense(expenses, amount, category):
-    expenses = []
-    #expense_dictionary = {'amount': amount}
     expenses.append({'amount': amount, 'category': category})
-    pass
 
 def print_expenses(expenses):
     for expense in expenses:
         print(f"Amount: {expense['amount']}, Category: {expense['category']}")
 
 def total_expenses(expenses):
-    pass
+    return sum(map(lambda expense: expense['amount'], expenses))
+
+def filter_expenses_by_category(expenses, category):
+    return filter(lambda expense: expense['category'] == category, expenses)
 
 def main():
-    my_list = [1, 2]
-    my_list.append(3)
-    my_list[0] = 0
-    my_list.insert(1, 1)
-    my_list.pop()
-    print(my_list)
+    expenses = []
+    while True:
+        print('\nExpense Tracker')
+        print('1. Add an expense')
+        print('2. List all expenses')
+        print('3. Show total expenses')
+        print('4. Filter expenses by category')
+        print('5. Exit')
+
+        choice = input('Enter your choice: ')
+
+        if choice == '1':
+            amount = float(input('Enter amount: '))
+
 
 if __name__ == '__main__':
     main()
